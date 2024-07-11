@@ -12,9 +12,11 @@ func main() {
 	fmt.Print("Please enter the height of the tube: ")
 	fmt.Scan(&height)
 
-	var area float32 = 3.14 * radius * radius * height
+	var phi float32 = 3.14
 
-	fmt.Println("The area of the tube is: ", area)
+	var area float32 = phi * radius * radius * height
+
+	fmt.Println("The volume of the tube is: ", area)
 
 	//Priority 1, Task 2
 	var score int
@@ -31,18 +33,18 @@ func main() {
 		fmt.Println("Grade D")
 	} else if score < 40 && score >= 0 {
 		fmt.Println("Grade E")
-	} else if score < 0 || score > 00 {
+	} else if score < 0 || score > 100 {
 		fmt.Println("Invalid score")
 	}
 
 	//Priority 1, Task 3
 	for i := 1; i <= 100; i++ {
-		if i%4 == 0 {
+		if i%4 == 0 && i%7 == 0 {
+			fmt.Println("buzz")
+		} else if i%4 == 0 {
 			fmt.Println(i * i)
 		} else if i%7 == 0 {
 			fmt.Println(i * i * i)
-		} else if i%4 == 0 && i%7 == 0 {
-			fmt.Println("buzz")
 		} else {
 			fmt.Println(i)
 		}
