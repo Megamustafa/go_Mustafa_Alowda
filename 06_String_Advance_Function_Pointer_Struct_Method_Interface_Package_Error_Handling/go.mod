@@ -1,0 +1,3 @@
+module 06_String_Advance_Function_Pointer_Struct_Method_Interface_Package_Error_Handling
+
+go 1.22.5
