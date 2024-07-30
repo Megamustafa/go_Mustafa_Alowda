@@ -9,22 +9,8 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "mysql",
-            "database": "priority_1_2",
-            "username": "root",
-            "password": ""
-        },
-        {
-            "mysqlOptions": {
-                "authProtocol": "default",
-                "enableSsl": "Disabled"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
-            "driver": "MySQL",
-            "name": "prio 2",
-            "database": "priority_2",
+            "name": "Join, Union, Aggregation, Subquery, Function (DBMS)",
+            "database": "dbms",
             "username": "root",
             "password": ""
         }
