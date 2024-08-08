@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "6abb0019-ec3d-4b88-bcef-e9d91a73d9e0",
+		"name": "REST API Priority 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37379650"
+	},
+	"item": [
+		{
+			"name": "Civic Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"word\": \"civic\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{KEY2}}/words",
+					"host": [
+						"{{KEY2}}"
+					],
+					"path": [
+						"words"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Kasur Rusak request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"word\": \"kAsUr RuSaK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{KEY2}}/words",
+					"host": [
+						"{{KEY2}}"
+					],
+					"path": [
+						"words"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rumah request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"word\": \"rumah\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{KEY2}}/words",
+					"host": [
+						"{{KEY2}}"
+					],
+					"path": [
+						"words"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "empty string request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"word\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{KEY2}}/words",
+					"host": [
+						"{{KEY2}}"
+					],
+					"path": [
+						"words"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "KEY2",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
