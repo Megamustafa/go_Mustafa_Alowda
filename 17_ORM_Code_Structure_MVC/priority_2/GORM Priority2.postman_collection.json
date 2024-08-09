@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "978bea8d-c7a4-4ede-ad0d-fddb6e1bb185",
+		"name": "GORM Priority2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37379650"
+	},
+	"item": [
+		{
+			"name": "Get all fruit data.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{KEY}}/api/v1/fruits",
+					"host": [
+						"{{KEY}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"fruits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{KEY}}/api/v1/fruits/f7a8a6a1-bcd1-4a3f-9aa5-f2b7521f171d",
+					"host": [
+						"{{KEY}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"fruits",
+						"f7a8a6a1-bcd1-4a3f-9aa5-f2b7521f171d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new fruit data.",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Apple\",\r\n    \"family\":\"Rosaceae\",\r\n    \"order\":\"Rosales\",\r\n    \"genus\":\"Malus\",\r\n    \"nutritions\":{\"calories\":52,\"fat\":0.4,\"sugar\":10.3,\"carbohydrates\":11.4,\"protein\":0.3}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{KEY}}/api/v1/fruits",
+					"host": [
+						"{{KEY}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"fruits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete fruit data.",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{KEY}}/api/v1/fruits/cc736ba4-1c28-4fec-baea-3c80f14a05af",
+					"host": [
+						"{{KEY}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"fruits",
+						"cc736ba4-1c28-4fec-baea-3c80f14a05af"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "KEY",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
