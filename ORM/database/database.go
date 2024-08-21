@@ -36,7 +36,7 @@ func InitDB() {
 }
 
 func MigrateDB() {
-	err := DB.AutoMigrate(&models.Package{})
+	err := DB.AutoMigrate(&models.Package{}, &models.User{})
 	if err != nil {
 		log.Fatal("migration failed", err)
 	}
