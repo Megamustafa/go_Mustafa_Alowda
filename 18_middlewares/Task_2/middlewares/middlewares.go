@@ -1,6 +1,7 @@
 package middlewares
 
 import (
+	"strings"
 	_ "time"
 
 	"github.com/dgrijalva/jwt-go"
@@ -18,6 +19,8 @@ func AuthMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 		if tokenString == "" {
 			return echo.ErrUnauthorized
 		}
+		tokenString = strings.Split(tokenString, " ")[1]
+
 		token, err := jwt.Parse(tokenString, func(token *jwt.Token) (interface{}, error) {
 			return []byte("secret"), nil
 		})

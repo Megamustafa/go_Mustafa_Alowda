@@ -25,7 +25,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer db.Close()
-	db.AutoMigrate(&models.Post{})
+	db.AutoMigrate(&models.Post{}, &models.User{})
 
 	// Routes
 	routes.InitRoutes(e, db)

@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"net/http"
+	"post-manager/models"
 	_ "post-manager/models"
 	"time"
 
@@ -11,15 +12,9 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-type User struct {
-	gorm.Model
-	Email    string `json:"email"`
-	Password string `json:"password"`
-}
-
 func RegisterUser(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
-		user := new(User)
+		user := new(models.User)
 		if err := c.Bind(user); err != nil {
 			return err
 		}
@@ -32,11 +27,11 @@ func RegisterUser(db *gorm.DB) echo.HandlerFunc {
 
 func LoginUser(db *gorm.DB) echo.HandlerFunc {
 	return func(c echo.Context) error {
-		user := new(User)
+		user := new(models.User)
 		if err := c.Bind(user); err != nil {
 			return err
 		}
-		var dbUser User
+		var dbUser models.User
 		db.Where("email = ?", user.Email).First(&dbUser)
 		if dbUser.ID == 0 {
 			return echo.ErrUnauthorized
@@ -48,7 +43,7 @@ func LoginUser(db *gorm.DB) echo.HandlerFunc {
 			"user_id": dbUser.ID,
 			"exp":     time.Now().Add(time.Hour * 72).Unix(),
 		})
-		tokenString, _ := token.SignedString([]byte("your_secret_key"))
+		tokenString, _ := token.SignedString([]byte("secret"))
 		return c.JSON(http.StatusOK, map[string]string{
 			"token": tokenString,
 		})
