@@ -1,9 +1,6 @@
 package models
 
-import "gorm.io/gorm"
-
-type Package struct {
-	gorm.Model
+type PackageRequest struct {
 	Name             string  `json:"name"`
 	Sender           string  `json:"sender"`
 	Receiver         string  `json:"receiver"`
