@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
+	echojwt "github.com/labstack/echo-jwt/v4"
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 )
 
 var jwtKey = []byte("secret")
@@ -23,7 +23,7 @@ func GenerateToken(userID string) (string, error) {
 }
 
 func JWTMiddleware() echo.MiddlewareFunc {
-	return middleware.JWTWithConfig(middleware.JWTConfig{
+	return echojwt.WithConfig(echojwt.Config{
 		SigningKey: jwtKey,
 	})
 }

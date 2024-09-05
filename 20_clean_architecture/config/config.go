@@ -29,7 +29,7 @@ func LoadConfig() (*Config, error) {
 		DBPassword: getEnv("DB_PASSWORD", ""),
 		DBHost:     getEnv("DB_HOST", "127.0.0.1"),
 		DBPort:     getEnv("DB_PORT", "3306"),
-		DBName:     getEnv("DB_NAME", "mydb"),
+		DBName:     getEnv("DB_NAME", "wishlist"),
 	}
 
 	return config, nil

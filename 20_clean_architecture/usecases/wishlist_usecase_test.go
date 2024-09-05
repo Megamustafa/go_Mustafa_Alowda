@@ -39,7 +39,6 @@ func TestCreateWishlist(t *testing.T) {
 
 	usecase := usecases.NewWishlistUsecase(mockRepo)
 	err := usecase.CreateWishlist(&entities.Wishlist{
-		ID:   "1",
 		Name: "Test Wishlist",
 	})
 
@@ -49,7 +48,7 @@ func TestCreateWishlist(t *testing.T) {
 
 func TestFindWishlist(t *testing.T) {
 	mockRepo := new(MockWishlistRepository)
-	mockRepo.On("FindByID", "1").Return(&entities.Wishlist{ID: "1", Name: "Test Wishlist"}, nil)
+	mockRepo.On("FindByID", "1").Return(&entities.Wishlist{Name: "Test Wishlist"}, nil)
 
 	usecase := usecases.NewWishlistUsecase(mockRepo)
 	wishlist, err := usecase.GetWishlistByID("1")

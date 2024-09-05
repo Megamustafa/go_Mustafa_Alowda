@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"go-wishlist-api/config"
+	"go-wishlist-api/entities"
 	"go-wishlist-api/frameworks/database"
 	"go-wishlist-api/frameworks/web"
 	"go-wishlist-api/interfaces/controllers"
@@ -31,6 +32,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Error connecting to the database: %v", err)
 	}
+	db.AutoMigrate(&entities.Wishlist{}, &entities.Item{})
 
 	// Initialize repository
 	wishlistRepo := database.NewGormWishlistRepository(db)

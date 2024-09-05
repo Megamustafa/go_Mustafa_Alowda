@@ -2,9 +2,9 @@ package entities
 
 import "gorm.io/gorm"
 
-type Wishlist struct {
+type Item struct {
 	gorm.Model
 	Name        string
 	Description string
-	Items       []Item
+	WishlistID  uint
 }
